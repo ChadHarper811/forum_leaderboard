@@ -5,6 +5,13 @@ const avatarUrl = "https://sea1.discourse-cdn.com/freecodecamp";
 
 const postsContainer = document.getElementById("posts-container");
 
+const allCategories = {
+    299: {
+        category: "Career Advice",
+        className: "career",
+    },
+};
+
 const timeAgo = (time) => {
     const currentTime = new Date();
     const lastPost = new Date(time);
@@ -69,7 +76,7 @@ const showLatestPosts = (data) => {
             </td>
             <td></td>
             <td>${posts_count - 1}</td>
-            <td>${views}</td>
+            <td>${viewCount(views)}</td>
             <td>${timeAgo(bumped_at)}</td>
         </tr>
         `
