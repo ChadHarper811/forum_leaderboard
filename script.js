@@ -8,6 +8,15 @@ const postsContainer = document.getElementById("posts-container");
 const timeAgo = (time) => {
     const currentTime = new Date();
     const lastPost = new Date(time);
+
+    const timeDifference = currentTime - lastPost;
+    const msPerMinute = 1000 * 60;
+    
+    const mintesAgo = Math.floor(timeDifference / msPerMinute);
+    const hoursAgo = Math.floor(mintesAgo / 60);
+    const daysAgo = Math.floor( hoursAgo / 24);
+
+    
 };
 
 const fetchData = async () => {
