@@ -69,6 +69,10 @@ const avatars = ( posters, users ) => {
         const user = users.find(user => user.id === poster.user_id);
         if (user) {
             const avatar = user.avatar_template.replace(/{size}/, 30);
+            const userAvatarUrl = avatar.startsWith("/user_avatar/") 
+                ? avatarUrl.concat(avatar)
+                : avatar;
+                
         }
     });
 }
