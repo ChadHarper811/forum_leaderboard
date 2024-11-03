@@ -29,7 +29,9 @@ const forumCategory = (id) => {
     }
 
     const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
-    
+    const linkText = selectedCategory.category;
+    const linkClass = `category ${selectedCategory.className}`;
+    return `<a href="${url}" class="${linkClass}" target="_blank">${linkText}</a>`
 };
 
 const timeAgo = (time) => {
