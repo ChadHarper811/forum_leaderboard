@@ -17,7 +17,19 @@ const allCategories = {
 };
 
 const forumCategory = (id) => {
-    let selectedCategory = [];
+    let selectedCategory = {};
+    if (allCategories.hasOwnProperty(id)) {
+        const { className, category } = allCategories[id];
+        selectedCategory.className = className;
+        selectedCategory.category = category;
+    } else {
+        selectedCategory.className = "general";
+        selectedCategory.category = "General";
+        selectedCategory.id = 1;
+    }
+
+    const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
+    
 };
 
 const timeAgo = (time) => {
